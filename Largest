@@ -1,0 +1,17 @@
+def find_largest_prime(n):
+    largest_prime = 0
+    for num in range(2, n + 1):
+        if is_prime(num):
+            largest_prime = num
+    return largest_prime
+
+def is_prime(num):
+    if num < 2:
+        return False
+    for i in range(2, int(num ** 0.5) + 1):
+        if num % i == 0:
+            return False
+    return True
+
+result = find_largest_prime(100)
+print(f"The largest prime number below 100 is: {result}")
